@@ -56,8 +56,7 @@ $THEME->layouts = array(
     // Course page.
     'course' => array(
         'file' => 'course.php',
-        'regions' => array('side-pre', 'side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-post'),
         'options' => array('nonavbar'=>false),
     ),
     // Standard layout with blocks, this is recommended for most pages with general information.

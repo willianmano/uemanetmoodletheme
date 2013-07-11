@@ -32,16 +32,8 @@ $hasheader = (empty($PAGE->layout_options['noheader']));
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
 
-$hasfooterleft = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-left', $OUTPUT));
-$hasfootermiddle = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-middle', $OUTPUT));
-$hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('footer-right', $OUTPUT));
-
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
-
-$showfooterleft = ($hasfooterleft && !$PAGE->blocks->region_completely_docked('footer-left', $OUTPUT));
-$showfootermiddle = ($hasfootermiddle && !$PAGE->blocks->region_completely_docked('footer-middle', $OUTPUT));
-$showfooterright = ($hasfooterright && !$PAGE->blocks->region_completely_docked('footer-right', $OUTPUT));
 
 // If there can be a sidepost region on this page and we are editing, always
 // show it so blocks can be dragged into it.
@@ -71,25 +63,6 @@ if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
     }
 }
 
-//$layout = 'pre-and-post';
-$layout = 'side-post-only';
-if ($showsidepre && !$showsidepost) {
-    if (!right_to_left()) {
-        $layout = 'side-pre-only';
-    } else {
-        $layout = 'side-post-only';
-    }
-} else if ($showsidepost && !$showsidepre) {
-    if (!right_to_left()) {
-        $layout = 'side-post-only';
-    } else {
-        $layout = 'side-pre-only';
-    }
-} else if (!$showsidepost && !$showsidepre) {
-    $layout = 'content-only';
-}
-$bodyclasses[] = $layout;
-
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
@@ -115,14 +88,14 @@ echo $OUTPUT->doctype() ?>
     <?php echo "<link rel='stylesheet' type='text/css' href='".$CFG->wwwroot."/theme/uemanet/style/labelCursos.css' />" ?>
 </head>
 
-<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
+<body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses) ?>">
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php 
-if ($hasheader) {
-    include('header.php');
-}
+    if ($hasheader) {
+        include('header.php');
+    }
 ?>
 
 <header role="banner" class="navbar">
@@ -135,9 +108,11 @@ if ($hasheader) {
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
+            <?php
+                if ($hascustommenu) {
+                    echo $custommenu;
+                }
+            ?>
             <ul class="nav pull-right">
             <li><?php echo $PAGE->headingmenu ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
@@ -151,58 +126,35 @@ if ($hasheader) {
         
     <div id="page-content" class="row-fluid">
 
-        <?php if ($layout === 'pre-and-post') { ?>
-        <section id="region-main" class="span6 desktop-first-column">
-        <?php } else if ($layout === 'side-post-only') { ?>
         <section id="region-main" class="span9 desktop-first-column">
-        <?php } else if ($layout === 'side-pre-only') { ?>
-        <section id="region-main" class="span9 desktop-first-column">
-        <?php } else if ($layout === 'content-only') { ?>
-        <section id="region-main" class="span12">
-        <?php } ?>
-            <?php if ($hasnavbar) { ?>
-            <nav class="breadcrumb-button"><?php echo $PAGE->button; ?></nav>
-            <?php echo $OUTPUT->navbar(); ?>
-            <?php } ?>
-            <?php echo $coursecontentheader; ?>
-            <h2 class="pagetitle"><span><?php echo $PAGE->title ?></span></h2>  
-            <?php echo $OUTPUT->main_content() ?>
-            <?php echo $coursecontentfooter; ?>
+            <?php
+                if ($hasnavbar) {
+                    echo "<nav class='breadcrumb-button'>";
+                        echo $PAGE->button;
+                    echo "</nav>";
+
+                    echo $OUTPUT->navbar();
+                }
+            ?>
+
+            <?php
+                echo $coursecontentheader;
+                echo "<h2 class='pagetitle'>";
+                    echo "<span>";
+                        echo $PAGE->title;
+                    echo "</span>";
+                echo "</h2>";
+            
+                echo $OUTPUT->main_content();
+                echo $coursecontentfooter;
+            ?>
         </section>
-        <?php if ($layout === 'pre-and-post') { ?>
-        <div class="span6">
-        <?php } else if ($layout === 'side-post-only') { ?>
-        <div class="span3">
-        <?php } else if ($layout === 'side-pre-only') { ?>
-        <div class="span3">
-        <?php } else if ($layout === 'content-only') { ?>
-        <div class="span0">
-        <?php } ?>
-            <?php if ($layout === 'pre-and-post') { ?>
-            <div class="span6">
-            <?php } else { ?>
-            <div class="span12" id="move">
-            <?php } ?>
-                <div id="region-post" class="block-region">
-                    <div class="region-content">
-                    <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
-                    </div>
-                </div>
-            </div>
-            <?php if ($layout === 'pre-and-post') { ?>
-            <div class="span6">
-            <?php } else { ?>
-            <div class="span12" style="margin-left: 0;">
-            <?php } ?>
-                <div id="region-pre" class="block-region">
-                    <div class="region-content">
-                    <?php echo $OUTPUT->blocks_for_region('side-pre'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <aside class="span3">
+                <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
+        </aside>
     </div>
-</div>      
+</div>
 
 <footer id="page-footer">
             <?php require('footer.php'); ?>

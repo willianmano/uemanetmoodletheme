@@ -1089,6 +1089,8 @@ img.profilepicture
 }
 
 /* @end */
+
+/*willian*/
 .label, .badge {
     font-weight: normal;
     background: transparent;
@@ -1096,10 +1098,6 @@ img.profilepicture
 img.userpicture {
     border-radius: 250px !important;
 }
-
-
-/*willian*/
-
 .course-content ul.topics li.section .content {
     margin-right: 0;
     margin-left: 0;
