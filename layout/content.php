@@ -75,15 +75,15 @@ echo $OUTPUT->doctype() ?>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
         @font-face {
-  		font-family: 'FontAwesome';
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.eot?v=3.2.1');
-  		src: url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
-  			url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
-  		font-weight: normal;
-  		font-style: normal;
-		}
+        font-family: 'FontAwesome';
+        src: url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.eot?v=3.2.1');
+        src: url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+            url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+            url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+            url('<?php echo $CFG->wwwroot ?>/theme/uemanet/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }
     </style>
     <?php echo "<link rel='stylesheet' type='text/css' href='".$CFG->wwwroot."/theme/uemanet/style/labelCursos.css' />" ?>
 </head>
@@ -126,7 +126,7 @@ echo $OUTPUT->doctype() ?>
         
     <div id="page-content" class="row-fluid">
 
-        <section id="region-main" class="span9 desktop-first-column">
+        <section id="region-main" class="span12">
             <?php
                 if ($hasnavbar) {
                     echo "<nav class='breadcrumb-button'>";
@@ -149,10 +149,6 @@ echo $OUTPUT->doctype() ?>
                 echo $coursecontentfooter;
             ?>
         </section>
-
-        <aside class="span3">
-            <?php echo $OUTPUT->blocks_for_region('side-post'); ?>
-        </aside>
     </div>
 </div>
 
@@ -163,21 +159,6 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_footer_html(); ?>
 
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-<script type="text/javascript">
-    
-$(function(e){
-    $('.topics .section .content .barraDisciplina').each(function (index, item) {
-        $(item).parent().find('.section').slideUp(0);
-    });
-
-    $('.topics .section .content .barraDisciplina').click(function(){
-        $(this).toggleClass('active');
-        $(this).parent().find('.section').slideToggle("slow", function() {
-        });
-    });
-})
-</script>
 
 </body>
 </html>

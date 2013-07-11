@@ -8,7 +8,7 @@ body{
     line-height: 25px;
     text-shadow: none !important;
     color: #444;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1102,7 +1102,48 @@ img.userpicture {
     margin-right: 0;
     margin-left: 0;
 }
-
+.courses .coursebox .content .summary {
+    text-align: right;    
+}
+.courses .coursebox .info h3.name {
+    width: 100%;
+}
+/*pagina d evisualizacao dos cursos responsive layout*/
+@media (max-width: 480px) {
+    .courses .coursebox .content .teachers {
+        display: none;
+    }
+    .courses .coursebox .content .summary{
+        width: 97%;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .courses .coursebox .content .teachers {
+        display: none;
+    }
+    .courses .coursebox .content .summary{
+        width: 97%;
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .courses .coursebox .content .teachers {
+        width: 335px;
+        font-size: 12px;
+    }
+    .courses .coursebox .content .summary{
+        max-width: 350px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1200px) {
+    .courses .coursebox .content .teachers {
+        width: 430px;
+        font-size: 13px;
+    }
+    .courses .coursebox .content .summary{
+        max-width: 450px;
+    }
+}
 /* Custom CSS Settings
 -------------------------*/
 [[setting:customcss]]

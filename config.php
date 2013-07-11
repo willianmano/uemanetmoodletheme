@@ -67,15 +67,13 @@ $THEME->layouts = array(
     ),
     // Page content and modules.
     'incourse' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-pre',
+        'file' => 'content.php',
+        'options' => array('nonavbar'=>false),
     ),
     // Category listing page.
-    	'coursecategory' => array(
-        'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
-        'defaultregion' => 'side-post',
+	'coursecategory' => array(
+        'file' => 'content.php',
+        'options' => array('nonavbar'=>false),
     ),
     // My dashboard page.
     'mydashboard' => array(
@@ -103,6 +101,10 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post', 'footer-left', 'footer-middle', 'footer-right'),
         'defaultregion' => 'side-pre',
+    ),
+    'report' => array(
+        'file' => 'content.php',
+        'options' => array('nonavbar'=>false),
     ),
 
 );

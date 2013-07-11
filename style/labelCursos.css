@@ -35,7 +35,7 @@
 .barraDisciplina:hover {
   font-weight: bold;
   -webkit-box-shadow: 0 50px 0 rgba(0, 0, 0, 0.3) inset;
-  box-shadow: 0 50px 0 rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 46px 0 rgba(0, 0, 0, 0.3) inset;
 }
 .barraDisciplina:hover:after {
   font-size: 20px;
