@@ -1,0 +1,205 @@
+.barraDisciplina, .barraTopico, {
+    font-family: Verdana,helvetica;
+    font-family: Verdana,helvetica;
+    font-size: 18px;
+}
+.barraDisciplina {
+  text-indent: 10px;
+  position: relative;
+  margin-left: -16px; /* 15px padding + 7px border ribbon shadow*/
+  margin-right: -16px;
+  padding: 15px;
+  padding-left: -10px !important;
+  background-color: #e5e5e5;
+  background: -moz-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
+  background: -webkit-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -o-linear-gradient(#f5f5f5, #e5e5e5);
+  background: -ms-linear-gradient(#f5f5f5, #e5e5e5);
+  background: linear-gradient(#f5f5f5, #e5e5e5);
+  -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
+  cursor: pointer;
+}
+.barraDisciplina:before, .barraDisciplina:after{
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content:'';
+  border-top: 6px solid #555;
+  border-left: 6px solid transparent;
+  width: 0;
+}
+.barraDisciplina:before{
+  border-top: 6px solid #555;
+  border-right: 6px solid transparent;
+  border-left: none;
+  left: auto;
+  right: 0;
+  bottom: -6px;
+}
+.barraDisciplina:hover{
+  background: -moz-linear-gradient(#e5e5e5, #f5f5f5);
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#f5f5f5));
+  background: -webkit-linear-gradient(#e5e5e5, #f5f5f5);
+  background: -o-linear-gradient(#e5e5e5, #f5f5f5);
+  background: -ms-linear-gradient(#e5e5e5, #f5f5f5);
+  background: linear-gradient(#e5e5e5, #f5f5f5);
+}
+.TecnicoEdificacoes{
+    background-color: #D15600;
+    background: -moz-linear-gradient(#D15600, #862D00);
+    background: -webkit-gradient(linear, left top, left bottom, from(#D15600), to(#862D00));
+    background: -webkit-linear-gradient(#D15600, #862D00);
+    background: -o-linear-gradient(#D15600, #862D00);
+    background: -ms-linear-gradient(#D15600, #862D00);
+    background: linear-gradient(#D15600, #862D00);
+    color: #FFF;
+}
+.TecnicoEdificacoes:hover{
+    background-color: #862D00;
+    background: -moz-linear-gradient(#862D00, #D15600);
+    background: -webkit-gradient(linear, left top, left bottom, from(#862D00), to(#D15600));
+    background: -webkit-linear-gradient(#862D00, #D15600);
+    background: -o-linear-gradient(#862D00, #D15600);
+    background: -ms-linear-gradient(#862D00, #D15600);
+    background: linear-gradient(#862D00, #D15600);
+    color: #FFF;
+}
+.TecnicoAlimentos{
+    background-color: #38B8FF;
+    background: -moz-linear-gradient(#38B8FF, #297296);
+    background: -webkit-gradient(linear, left top, left bottom, from(#38B8FF), to(#297296));
+    background: -webkit-linear-gradient(#38B8FF, #297296);
+    background: -o-linear-gradient(#38B8FF, #297296);
+    background: -ms-linear-gradient(#38B8FF, #297296);
+    background: linear-gradient(#38B8FF, #297296);
+    color: #FFF;
+}
+.TecnicoAlimentos:hover{
+    background-color: #297296;
+    background: -moz-linear-gradient(#297296, #38B8FF);
+    background: -webkit-gradient(linear, left top, left bottom, from(#297296), to(#38B8FF));
+    background: -webkit-linear-gradient(#297296, #38B8FF);
+    background: -o-linear-gradient(#297296, #38B8FF);
+    background: -ms-linear-gradient(#297296, #38B8FF);
+    background: linear-gradient(#297296, #38B8FF);
+    color: #FFF;
+}
+.TecnicoContabilidade, .TecnicoServicosPublicos{
+    background-color: #FF0F00;
+    background: -moz-linear-gradient(#FF0F00, #A50000);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FF0F00), to(#A50000));
+    background: -webkit-linear-gradient(#FF0F00, #A50000);
+    background: -o-linear-gradient(#FF0F00, #A50000);
+    background: -ms-linear-gradient(#FF0F00, #A50000);
+    background: linear-gradient(#FF0F00, #A50000);
+    color: #FFF;
+}
+.TecnicoContabilidade:hover, .TecnicoServicosPublicos:hover{
+    background-color: #A50000;
+    background: -moz-linear-gradient(#A50000, #FF0F00);
+    background: -webkit-gradient(linear, left top, left bottom, from(#A50000), to(#FF0F00));
+    background: -webkit-linear-gradient(#A50000, #FF0F00);
+    background: -o-linear-gradient(#A50000, #FF0F00);
+    background: -ms-linear-gradient(#A50000, #FF0F00);
+    background: linear-gradient(#A50000, #FF0F00);
+    color: #FFF;
+}
+.TecnicoPlanejamento, .TecnicoRedeComputador, .TecnicoInformatica{
+    background-color: #1AB058;
+    background: -moz-linear-gradient(#1AB058, #0F6633);
+    background: -webkit-gradient(linear, left top, left bottom, from(#1AB058), to(#0F6633));
+    background: -webkit-linear-gradient(#1AB058, #0F6633);
+    background: -o-linear-gradient(#1AB058, #0F6633);
+    background: -ms-linear-gradient(#1AB058, #0F6633);
+    background: linear-gradient(#1AB058, #0F6633);
+    color: #FFF;
+}
+.TecnicoPlanejamento:hover, .TecnicoRedeComputador:hover, .TecnicoInformatica:hover{
+    background-color: #0F6633;
+    background: -moz-linear-gradient(#0F6633, #1AB058);
+    background: -webkit-gradient(linear, left top, left bottom, from(#0F6633), to(#1AB058));
+    background: -webkit-linear-gradient(#0F6633, #1AB058);
+    background: -o-linear-gradient(#0F6633, #1AB058);
+    background: -ms-linear-gradient(#0F6633, #1AB058);
+    background: linear-gradient(#0F6633, #1AB058);
+    color: #FFF;
+}
+.TecnicoGuiaTurismo{
+    background-color: #86B224;
+    background: -moz-linear-gradient(#86B224, #4C6614);
+    background: -webkit-gradient(linear, left top, left bottom, from(#86B224), to(#4C6614));
+    background: -webkit-linear-gradient(#86B224, #4C6614);
+    background: -o-linear-gradient(#86B224, #4C6614);
+    background: -ms-linear-gradient(#86B224, #4C6614);
+    background: linear-gradient(#86B224, #4C6614);
+    color: #FFF;    
+}
+.TecnicoGuiaTurismo:hover{
+    background-color: #4C6614;
+    background: -moz-linear-gradient(#4C6614, #86B224);
+    background: -webkit-gradient(linear, left top, left bottom, from(#4C6614), to(#86B224));
+    background: -webkit-linear-gradient(#4C6614, #86B224);
+    background: -o-linear-gradient(#4C6614, #86B224);
+    background: -ms-linear-gradient(#4C6614, #86B224);
+    background: linear-gradient(#4C6614, #86B224);
+    color: #FFF;    
+}
+.TecnicoManutencaoAutomotiva{
+    background-color: #A2CF6D;
+    background: -moz-linear-gradient(#A2CF6D, #6D8E4E);
+    background: -webkit-gradient(linear, left top, left bottom, from(#A2CF6D), to(#6D8E4E));
+    background: -webkit-linear-gradient(#A2CF6D, #6D8E4E);
+    background: -o-linear-gradient(#A2CF6D, #6D8E4E);
+    background: -ms-linear-gradient(#A2CF6D, #6D8E4E);
+    background: linear-gradient(#A2CF6D, #6D8E4E);
+    color: #FFF;    
+}
+.TecnicoManutencaoAutomotiva:hover{
+    background-color: #6D8E4E;
+    background: -moz-linear-gradient(#6D8E4E, #A2CF6D);
+    background: -webkit-gradient(linear, left top, left bottom, from(#6D8E4E), to(#A2CF6D));
+    background: -webkit-linear-gradient(#6D8E4E, #A2CF6D);
+    background: -o-linear-gradient(#6D8E4E, #A2CF6D);
+    background: -ms-linear-gradient(#6D8E4E, #A2CF6D);
+    background: linear-gradient(#6D8E4E, #A2CF6D);
+    color: #FFF;    
+}
+.barraTopico {
+    text-indent: 65px;
+    font-weight: bold;
+    height: 20px;
+    background-color: #e5e5e5;
+    position: relative;
+    padding: 7px 0 3px 0;
+    
+    -webkit-border-radius: 10px 0 10px 0;
+    -moz-border-radius: 10px 0 10px 0;
+    border-radius: 10px 0 10px 0;
+    
+    -webkit-background-size: 40px 40px;
+    -moz-background-size: 40px 40px;
+    background-size: 40px 40px;
+
+    margin: 25px 0;
+    letter-spacing:1px;
+}
+.barraTopico img {
+    position: absolute;
+    top: -13px;
+    left: 10px;
+    width: 52px !important;
+    height: 52px !important;
+}
+.barraTopico {
+    background-color: #e5e5e5;
+    background: -moz-linear-gradient(#e5e5e5, #d6d4d4);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#d6d4d4));
+    background: -webkit-linear-gradient(#e5e5e5, #d6d4d4;
+    background: -o-linear-gradient(#e5e5e5, #d6d4d4);
+    background: -ms-linear-gradient(#e5e5e5, #d6d4d4);
+    background: linear-gradient(#e5e5e5, #d6d4d4);
+    color: #FFF;
+}

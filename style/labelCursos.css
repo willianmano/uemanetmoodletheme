@@ -1,0 +1,47 @@
+.barraDisciplina {
+  border-style: solid 1px #2284a1;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  text-decoration: none;
+  position: relative;
+
+  font-size: 18px;
+
+  background-color: #2ba6cb;
+  color: #FFF;
+  font-size: 1.25em;
+  padding: 1.03125em 1em 1.03125em 1em;
+
+  -webkit-transition: box-shadow 300ms ease-out;
+  -moz-transition: box-shadow 300ms ease-out;
+  transition: box-shadow 300ms ease-out;
+}
+.barraDisciplina:after{
+  position: absolute;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+
+  right: 12px;
+  bottom: 17px;
+  content: "\f053";
+  font-size: 15px;
+}
+.barraDisciplina:hover {
+  font-weight: bold;
+  -webkit-box-shadow: 0 50px 0 rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 50px 0 rgba(0, 0, 0, 0.3) inset;
+}
+.barraDisciplina:hover:after {
+  font-size: 20px;
+  right: 10px;
+  bottom: 14px;
+}
+.barraDisciplina.active:after {
+  content: "\f078";
+}
